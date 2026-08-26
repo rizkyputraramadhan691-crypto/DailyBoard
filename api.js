@@ -1,48 +1,5 @@
-async function ambilKutipan() {
-	const elKutipan = document.getElementById("kutipan-harian");
-	try {
-		const res = await fetch("https://randominspirationalquotes.onrender.com");
-        
-		if (!res.ok) {
-			throw new Error("Gagal terhubung ke server kutipan.");
-		}
-        
-		const data = await res.json();
-		elKutipan.innerHTML = `<em>"${data.quote}"</em> — <strong>${data.author}</strong>`;
-	} catch (error) {
-		console.error("Gagal mengambil kutipan:", error);
-		elKutipan.textContent = "⚠️ Gagal memuat kutipan harian. Periksa koneksi internet Anda.";
-		elKutipan.style.color = "red";
-	}
-}
-
-async function ambilCuaca(kota) {
-	const apiKey = "f3266bdf7064b8c7c3a924ab5e9deb82";
-	const url = `https://api.openweathermap.org/data/2.5/weather?q=${kota}&appid=${apiKey}&units=metric`;
-	const divCuaca = document.getElementById("cuaca-harian");
-
-	divCuaca.textContent = "Memuat cuaca...";
-
-	try {
-		const res = await fetch(url);
-		if (!res.ok) {
-			throw new Error("Kota tidak ditemukan");
-		}
-		const data = await res.json();
-		divCuaca.innerHTML = `
-			<h4>${data.name}</h4>
-			<p>Suhu: ${data.main.temp}°C</p>
-			<p>Kelembapan: ${data.main.humidity}%</p>
-		`;
-	} catch (error) {
-		divCuaca.textContent = error.message;
-	}
-}
-
-async function muatSemuaWidget() {
-	document.getElementById("status").textContent = "Memuat data...";
-	await Promise.all([ambilKutipan(), ambilCuaca("Jakarta")]);
-	document.getElementById("status").textContent = "Data berhasil dimuat!";
-}
-
-export { ambilKutipan, ambilCuaca, muatSemuaWidget };
+async function ambilKutipan(){let t=document.getElementById("kutipan-harian");try{let a=await fetch("https://randominspirationalquotes.onrender.com");if(!a.ok)throw Error("Gagal terhubung ke server kutipan.");let e=await a.json();t.innerHTML=`<em>"${e.quote}"</em> — <strong>${e.author}</strong>`}catch(n){console.error("Gagal mengambil kutipan:",n),t.textContent="⚠️ Gagal memuat kutipan harian. Periksa koneksi internet Anda.",t.style.color="red"}}async function ambilCuaca(t){let a=`https://api.openweathermap.org/data/2.5/weather?q=${t}&appid=f3266bdf7064b8c7c3a924ab5e9deb82&units=metric`,e=document.getElementById("cuaca-harian");e.textContent="Memuat cuaca...";try{let n=await fetch(a);if(!n.ok)throw Error("Kota tidak ditemukan");let i=await n.json();e.innerHTML=`
+			<h4>${i.name}</h4>
+			<p>Suhu: ${i.main.temp}\xb0C</p>
+			<p>Kelembapan: ${i.main.humidity}%</p>
+		`}catch(m){e.textContent=m.message}}async function muatSemuaWidget(){document.getElementById("status").textContent="Memuat data...",await Promise.all([ambilKutipan(),ambilCuaca("Jakarta")]),document.getElementById("status").textContent="Data berhasil dimuat!"}export{ambilKutipan,ambilCuaca,muatSemuaWidget};
