@@ -1,8 +1,8 @@
 # DailyBoard — Dashboard Produktivitas Harian
 
-DailyBoard adalah aplikasi web dashboard produktivitas harian yang dibuat menggunakan **HTML, CSS, dan JavaScript murni (Vanilla JavaScript)** tanpa menggunakan framework.
+DailyBoard adalah web dashboard produktivitas harian yang dibuat menggunakan **HTML, CSS, dan JavaScript murni (Vanilla JavaScript)** tanpa menggunakan framework.
 
-Aplikasi ini dibuat sebagai proyek JavaScript satu semester dengan tujuan menerapkan manipulasi DOM, event handling, penyimpanan data menggunakan `localStorage`, penggunaan API eksternal, fitur drag-and-drop, dark mode, pencarian tugas, serta optimasi performa.
+Web ini dibuat sebagai proyek JavaScript satu semester dengan tujuan menerapkan manipulasi DOM, event handling, penyimpanan data menggunakan `localStorage`, penggunaan API eksternal, fitur drag-and-drop, dark mode, pencarian tugas, serta optimasi performa.
 
 ## 🚀 Fitur
 
