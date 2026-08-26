@@ -1,7 +1,7 @@
-import { ambilKutipan, ambilCuaca, muatSemuaWidget } from "./api.js";
-import { tambahCatatan, muatCatatanDariStorage, renderCatatan } from "./catatan.js";
-import { simpanTemaKeStorage, muatTemaDariStorage } from "./storage.js";
-import { tambahTugas, renderTugas, muatTugasDariStorage, filterAktif } from "./tugas.js";
+import { ambilKutipan, ambilCuaca, muatSemuaWidget } from "../api.js";
+import { tambahCatatan, muatCatatanDariStorage, renderCatatan } from "../catatan.js";
+import { simpanTemaKeStorage, muatTemaDariStorage } from "../storage.js";
+import { tambahTugas, renderTugas, muatTugasDariStorage, filterAktif } from "../tugas.js";
 
 const app = document.getElementById("app");
 // minggu 1
